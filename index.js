@@ -91,6 +91,8 @@ function init() {
 // function call to initialize program
 init();
 
+
+// Code from tutor session using as reference
 // var inquirer = require('inquirer');
 // async function askUser(){
 // 	try {
