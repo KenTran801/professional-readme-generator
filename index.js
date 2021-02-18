@@ -1,9 +1,9 @@
 // const, let, vars
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
 // array of questions for user
-inquirer
-    .prompt([
+const questions = [
     // Title
     {
         type: 'input',
@@ -53,38 +53,30 @@ inquirer
         message: 'Please provide for tests for your application and example on how to run them.',
     },
     // Questions section
-        // Github Username
+    // Github Username
     {
         type: 'input',
         name: 'username',
         message: 'Please provide your GitHub username.',
     },
-        // Email
+    // Email
     {
         type: 'input',
         name: 'email',
         message: 'Please provide your email address.',
     },
-])
-const questions = [
-    // Title
-    // Project Description
-    // Project Installation
-    // Project Usage
-    // Project Licenses
-    // Project Contributors
-    // Project Tests
-    // Question section
-        // Github username
-        // Email
 ];
-
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data,), (err) =>
+        err ? console.log(err) : console.log('Success! A file has been created')
 }
 
 // function to initialize program
-function init() {
+async function init() {
+    try {
+        const userAnswers = await inquirer.prompt
+    }
 
 }
 
