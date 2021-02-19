@@ -75,11 +75,12 @@ function writeToFile(fileName, data) {
 // function to initialize program
 async function init() {
     try {
-        const userAnswers = await inquirer.prompt
+        const userAnswers = await inquirer.prompt(questions);
+        
+    } catch (error) {
+        console.log(error);
     }
-
 }
-
 // function call to initialize program
 init();
 
