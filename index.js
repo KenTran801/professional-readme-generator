@@ -72,11 +72,16 @@ function writeToFile(fileName, data) {
         err ? console.log(err) : console.log('Success! A file has been created')
 }
 
-// function to initialize program
+// function to initialize program, attempting to use async from tutoring session
 async function init() {
     try {
+        // 
         const userAnswers = await inquirer.prompt(questions);
-        
+        const genMarkdown = generateMarkdown(userAnswers)
+        console.log(genMarkdown);
+
+        await writeToFile('TestingREADME.md', genMarkdown);
+
     } catch (error) {
         console.log(error);
     }
