@@ -77,10 +77,11 @@ async function init() {
     try {
         // 
         const userAnswers = await inquirer.prompt(questions);
+        console.log(userAnswers);
         const genMarkdown = generateMarkdown(userAnswers)
         console.log(genMarkdown);
 
-        await writeToFile('TestingREADME.md', genMarkdown);
+        // await writeToFile('TestingREADME.md', genMarkdown);
 
     } catch (error) {
         console.log(error);
